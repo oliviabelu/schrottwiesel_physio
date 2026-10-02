@@ -1,11 +1,15 @@
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import React from "react";
+import Navigation from "@/components/Navigation";
+import Hero from "@/components/Hero";
+import Why from "@/components/Why";
 
 const Home = () => {
   return (
     <Box>
-      <Typography variant="h1">Home</Typography>
+      <Navigation></Navigation>
+      <Hero></Hero>
+      <Why></Why>
     </Box>
   );
 };
