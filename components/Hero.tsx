@@ -22,7 +22,9 @@ const Hero = () => {
       <Container>
         <Stack direction={{ xs: "column", md: "row" }}>
           <Box sx={{ flex: 1 }}>
-            <Typography color="primary.main">Physiotherapie</Typography>
+            <Typography color="primary.main" variant="body2">
+              Physiotherapie
+            </Typography>
             <Typography
               variant="h1"
               sx={{
