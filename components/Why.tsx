@@ -9,18 +9,18 @@ import { getAccent } from "@/src/constants/accents";
 const reasons = [
   {
     number: 1,
-    reason: "Zuhören",
-    explanation: "Wir verstehen zuerst, was dich wirklich einschränkt.",
+    title: "Zuhören",
+    text: "Wir verstehen zuerst, was dich wirklich einschränkt.",
   },
   {
     number: 2,
-    reason: "Bewegen",
-    explanation: "Wir arbeiten aktiv an dem, was du wieder können möchtest.",
+    title: "Bewegen",
+    text: "Wir arbeiten aktiv an dem, was du wieder können möchtest.",
   },
   {
     number: 3,
-    reason: "Verstehen",
-    explanation: "Du bekommst einen Plan, den du selbst anwenden kannst.",
+    title: "Verstehen",
+    text: "Du bekommst einen Plan, den du selbst anwenden kannst.",
   },
 ];
 
@@ -33,13 +33,13 @@ const Why = () => {
       }}
     >
       <Container>
-        <Typography variant="body2" sx={{}}>
+        <Typography variant="body2" sx={{ color: "primary.main" }}>
           Warum Schrottwiesel?
         </Typography>
         <Typography variant="h2" sx={{ margin: "1rem 0" }}>
           Behandlung, die dich wirklich weiterbringt.
         </Typography>
-        <Typography variant="body1">
+        <Typography variant="body2">
           Keine Behandlung von der Stange. Wir verbinden gezielte Befundung,
           aktive Therapie und verständliche Übungen – damit du nicht nur heute
           weniger Beschwerden hast, sondern langfristig mehr Sicherheit

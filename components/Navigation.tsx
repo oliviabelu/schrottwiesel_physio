@@ -33,10 +33,10 @@ const Navigation = () => {
     >
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <Image
-          src="/Schrottwiesel_Physiotherapie.PNG"
+          src="/Schrottwiesel_Physiotherapie_Logo.PNG"
           alt="Logo"
-          width={60}
-          height={90}
+          width={86}
+          height={64}
         />
         <Stack
           component="nav"

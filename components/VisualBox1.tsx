@@ -6,27 +6,28 @@ import type { AccentColor } from "@/src/constants/accents";
 
 type Props = {
   number: number;
-  reason: string;
-  explanation: string;
+  title: string;
+  text: string;
   color: AccentColor;
 };
 
-const VisualBox1 = ({ number, reason, explanation, color }: Props) => {
+const VisualBox1 = ({ number, title, text, color }: Props) => {
   return (
     <Box
       sx={{
         border: 1,
-        borderColor: "secondary.light",
+        borderColor: "divider",
         borderLeftColor: `${color}.main`,
         borderLeftWidth: 4,
         borderRadius: 1,
         padding: 1,
+        maxWidth: "350px",
       }}
     >
       <Stack direction="column" spacing={1.5}>
         <Typography sx={{ color: `${color}.main` }}>{number}</Typography>
-        <Typography variant="h3">{reason}</Typography>
-        <Typography variant="body2">{explanation}</Typography>
+        <Typography variant="h3">{title}</Typography>
+        <Typography variant="body2">{text}</Typography>
       </Stack>
     </Box>
   );

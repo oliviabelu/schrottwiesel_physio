@@ -3,6 +3,8 @@ import React from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Why from "@/components/Why";
+import Leistungen from "@/components/Leistungen";
+import Praxis from "@/components/Praxis";
 
 const Home = () => {
   return (
@@ -19,6 +21,8 @@ const Home = () => {
       <Navigation></Navigation>
       <Hero></Hero>
       <Why></Why>
+      <Leistungen></Leistungen>
+      <Praxis></Praxis>
     </Box>
   );
 };
