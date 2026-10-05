@@ -1,55 +1,89 @@
-"use client";
 import React from "react";
 import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import { useTheme } from "@mui/material/styles";
+import CheckIcon from "@mui/icons-material/Check";
+import Image from "next/image";
+
+const highlights = ["persönlich", "aktiv", "alltagsnah"];
 
 const Hero = () => {
-  const theme = useTheme();
   return (
     <Box
+      component="section"
       sx={{
-        width: "100vw",
-        padding: "1rem",
-        height: "auto",
         bgcolor: "info.light",
-        borderBottom: "1px solid #FFF",
-        borderRadius: "0 0 40% 60%/75px ",
+        borderRadius: "0 0 50% 50% / 40px ",
+        py: { xs: 4, md: 8 },
       }}
     >
-      <Typography color="primary.main">Physiotherapie</Typography>
-      <Typography
-        variant="h1"
-        sx={{ textTransform: "uppercase", margin: "2rem 0" }}
-        width={"30vw"}
-      >
-        Dein Körper,
-        <span style={{ color: theme.palette.primary.main }}>unsere</span>{" "}
-        Baustelle!
-      </Typography>
-      <Typography width={"50vw"} sx={{ marginBottom: "2rem" }}>
-        Individuelle Physiotherapie für Menschen, die wieder besser, sicherer
-        und freier in Bewegung kommen wollen.
-      </Typography>
-      <Box sx={{ display: "flex", gap: "2rem", marginBottom: "2rem" }}>
-        <Button variant="contained">Erstgespräch</Button>
-        <Button variant="contained" color="secondary">
-          Leistungen
-        </Button>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-around",
-          width: "50vw",
-          marginBottom: "3rem",
-        }}
-      >
-        <Typography>persönlich</Typography>
-        <Typography>aktiv</Typography>
-        <Typography>alltagsnah</Typography>
-      </Box>
+      <Container>
+        <Stack direction={{ xs: "column", md: "row" }}>
+          <Box sx={{ flex: 1 }}>
+            <Typography color="primary.main">Physiotherapie</Typography>
+            <Typography
+              variant="h1"
+              sx={{
+                fontSize: { xs: "2.25rem", md: "4rem" },
+                textTransform: "uppercase",
+                margin: "2rem 0",
+              }}
+            >
+              Dein Körper,
+              <br />
+              <Box component="span" sx={{ color: "primary.main" }}>
+                unsere
+                <br />
+              </Box>
+              Baustelle!
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{ marginBottom: "2rem" }}
+              maxWidth={{ sm: "50vw" }}
+            >
+              Individuelle Physiotherapie für Menschen, die wieder besser,
+              sicherer und freier in Bewegung kommen wollen.
+            </Typography>
+            <Box sx={{ display: "flex", gap: "2rem", marginBottom: "2rem" }}>
+              <Button variant="contained">Erstgespräch</Button>
+              <Button variant="contained" color="secondary">
+                Leistungen
+              </Button>
+            </Box>
+
+            <Stack
+              direction="row"
+              spacing={{ xs: 2, md: 4 }}
+              useFlexGap
+              flexWrap="wrap"
+            >
+              {highlights.map((item) => (
+                <Stack
+                  key={item}
+                  direction="row"
+                  spacing={1}
+                  alignItems="center"
+                >
+                  <CheckIcon color="primary" fontSize="small" />
+                  <Typography>{item}</Typography>
+                </Stack>
+              ))}
+            </Stack>
+          </Box>
+          <Box sx={{ flex: 1, display: { xs: "none", md: "flex" } }}>
+            <Image
+              src="/Schrottwiesel_Physiotherapie.PNG"
+              alt="Logo"
+              width={400}
+              height={600}
+              style={{ borderRadius: 16 }}
+            />
+          </Box>
+        </Stack>
+      </Container>
     </Box>
   );
 };

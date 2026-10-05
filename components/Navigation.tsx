@@ -28,6 +28,7 @@ const Navigation = () => {
   return (
     <AppBar
       position="sticky"
+      color="inherit"
       sx={{ bgcolor: "Background.default", color: "text.primary" }}
     >
       <Toolbar sx={{ justifyContent: "space-between" }}>

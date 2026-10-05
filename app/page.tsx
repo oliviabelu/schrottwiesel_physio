@@ -17,8 +17,8 @@ const Home = () => {
       }}
     >
       <Navigation></Navigation>
-      {/* <Hero></Hero>
-      <Why></Why> */}
+      <Hero></Hero>
+      {/*  <Why></Why> */}
     </Box>
   );
 };
