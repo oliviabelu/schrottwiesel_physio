@@ -1,43 +1,85 @@
+"use client";
 import React from "react";
-import Box from "@mui/material/Box";
 import Image from "next/image";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+import NextLink from "next/link";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Stack from "@mui/material/Stack";
+import MuiLink from "@mui/material/Link";
+import IconButton from "@mui/material/IconButton";
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useState } from "react";
+
+const navItems = [
+  { label: "Leistungen", href: "#leistungen" },
+  { label: "Praxis", href: "#praxis" },
+  { label: "Team", href: "#team" },
+  { label: "Ablauf", href: "#ablauf" },
+  { label: "Kontakt", href: "#kontakt" },
+];
 
 const Navigation = () => {
+  const [open, setOpen] = useState(false);
   return (
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-      }}
+    <AppBar
+      position="sticky"
+      sx={{ bgcolor: "Background.default", color: "text.primary" }}
     >
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          gap: "2rem",
-        }}
-      >
+      <Toolbar sx={{ justifyContent: "space-between" }}>
         <Image
           src="/Schrottwiesel_Physiotherapie.PNG"
           alt="Logo"
           width={60}
           height={90}
-        ></Image>
-        <Box sx={{ display: "flex", gap: "2rem" }}>
-          <Typography>Leistungen</Typography>
-          <Typography>Praxis</Typography>
-          <Typography>Team</Typography>
-          <Typography>Ablauf</Typography>
-          <Typography>Kontakt</Typography>
-        </Box>
-      </Box>
-      <Button variant="contained" color="primary">
-        Termin vereinbaren
-      </Button>
-    </Box>
+        />
+        <Stack
+          component="nav"
+          direction="row"
+          spacing={4}
+          sx={{ display: { xs: "none", md: "flex" } }}
+        >
+          {navItems.map((item) => (
+            <MuiLink key={item.href} component={NextLink} href={item.href}>
+              {item.label}
+            </MuiLink>
+          ))}
+        </Stack>
+
+        <Button
+          variant="contained"
+          sx={{ display: { xs: "none", md: "inline-flex" } }}
+        >
+          Termin vereinbaren
+        </Button>
+        <IconButton
+          aria-label="Menü öffnen"
+          onClick={() => setOpen(true)}
+          sx={{ display: { xs: "inline-flex", md: "none" } }}
+        >
+          <MenuIcon />
+        </IconButton>
+      </Toolbar>
+
+      <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
+        <List>
+          {navItems.map((item) => (
+            <ListItemButton
+              key={item.href}
+              component={NextLink}
+              href={item.href}
+              onClick={() => setOpen(false)}
+            >
+              <ListItemText primary={item.label} />
+            </ListItemButton>
+          ))}
+        </List>
+      </Drawer>
+    </AppBar>
   );
 };
 

@@ -6,10 +6,19 @@ import Why from "@/components/Why";
 
 const Home = () => {
   return (
-    <Box>
+    <Box
+      sx={{
+        width: "100vw",
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        // justifyContent: "center",
+        // alignItems: "center",
+      }}
+    >
       <Navigation></Navigation>
-      <Hero></Hero>
-      <Why></Why>
+      {/* <Hero></Hero>
+      <Why></Why> */}
     </Box>
   );
 };

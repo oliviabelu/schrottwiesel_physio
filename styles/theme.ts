@@ -100,6 +100,20 @@ const theme = createTheme({
   },
 
   components: {
+    MuiLink: {
+      defaultProps: {
+        underline: "none",
+        color: "inherit",
+      },
+      styleOverrides: {
+        root: ({ theme }) => ({
+          fontWeight: 500,
+          "&:hover": {
+            color: theme.palette.primary.main,
+          },
+        }),
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {
