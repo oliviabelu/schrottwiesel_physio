@@ -33,7 +33,7 @@ const Navigation = () => {
     >
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <Image
-          src="/Schrottwiesel_Physiotherapie_Logo.PNG"
+          src="/Schrottwiesel_Physiotherapie_Logo.png"
           alt="Logo"
           width={86}
           height={64}

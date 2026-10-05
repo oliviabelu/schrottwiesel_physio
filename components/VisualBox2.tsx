@@ -47,6 +47,7 @@ const VisualBox2 = ({ title, text, color }: Props) => {
               fontWeight: 600,
               textTransform: "uppercase",
               fontSize: "small",
+              alignSelf: "flex-end",
             }}
           >
             Mehr erfahren
