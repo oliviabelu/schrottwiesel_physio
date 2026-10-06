@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 
 import { getAccent } from "@/src/constants/accents";
+import Strenght from "./Strenght";
 
 const strenghts = [
   {
@@ -21,23 +22,26 @@ const strenghts = [
 const Praxis = () => {
   return (
     <Box
+      id="praxis"
       component="section"
       sx={{
         py: { xs: 4, md: 8 },
       }}
     >
       <Container>
-        <Stack direction="row" spacing={3}>
+        <Stack direction={{ xs: "column", md: "row" }} spacing={3}>
           <Box
-            bgcolor="info.light"
-            width="300px"
-            height="200px"
-            textAlign="center"
-            padding="3rem"
-            borderRadius={1}
-            sx={{ flex: 1, display: { xs: "none", sm: "block" } }}
+            sx={{
+              flex: 1,
+              display: { xs: "none", md: "flex" },
+              alignItems: "center",
+              justifyContent: "center",
+              bgcolor: "info.light",
+              borderRadius: 1,
+              aspectRatio: "4 / 3",
+            }}
           >
-            Praxisfoto
+            Praxisfotos
           </Box>
           <Stack direction="column" spacing={3} sx={{ flex: 1 }}>
             <Typography
@@ -57,13 +61,17 @@ const Praxis = () => {
               </Box>
             </Typography>
             <Box
-              bgcolor="info.light"
-              width="300px"
-              height="200px"
-              textAlign="center"
-              padding="3rem"
-              borderRadius={1}
-              sx={{ display: { xs: "block", sm: "none" } }}
+              sx={{
+                display: { xs: "flex", md: "none" },
+                alignItems: "center",
+                justifyContent: "center",
+                bgcolor: "info.light",
+                borderRadius: 1,
+                width: "100%",
+                maxWidth: 480,
+                mx: "auto",
+                aspectRatio: "16 / 9",
+              }}
             >
               Praxisfoto
             </Box>
@@ -80,22 +88,11 @@ const Praxis = () => {
             </Typography>
             <Stack direction="column" spacing={2}>
               {strenghts.map((strenght, index) => (
-                <Box key={strenght.title}>
-                  <Stack direction="row" spacing={2}>
-                    <Box
-                      width="20px"
-                      height="20px"
-                      borderRadius={100}
-                      sx={{ bgcolor: `${getAccent(index)}.main` }}
-                    ></Box>
-                    <Stack direction="column">
-                      <Typography sx={{ fontWeight: 600 }}>
-                        {strenght.title}
-                      </Typography>
-                      <Typography variant="body2">{strenght.text}</Typography>
-                    </Stack>
-                  </Stack>
-                </Box>
+                <Strenght
+                  key={strenght.title}
+                  {...strenght}
+                  color={getAccent(index)}
+                ></Strenght>
               ))}
             </Stack>
           </Stack>

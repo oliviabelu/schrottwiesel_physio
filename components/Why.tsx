@@ -33,7 +33,10 @@ const Why = () => {
       }}
     >
       <Container>
-        <Typography variant="body2" sx={{ color: "primary.main" }}>
+        <Typography
+          variant="body2"
+          sx={{ color: "primary.main", textTransform: "uppercase" }}
+        >
           Warum Schrottwiesel?
         </Typography>
         <Typography variant="h2" sx={{ margin: "1rem 0" }}>

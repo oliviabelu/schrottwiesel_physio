@@ -22,7 +22,10 @@ const Hero = () => {
       <Container>
         <Stack direction={{ xs: "column", md: "row" }}>
           <Box sx={{ flex: 1 }}>
-            <Typography color="primary.main" variant="body2">
+            <Typography
+              variant="body2"
+              sx={{ color: "primary.main", textTransform: "uppercase" }}
+            >
               Physiotherapie
             </Typography>
             <Typography
@@ -43,8 +46,7 @@ const Hero = () => {
             </Typography>
             <Typography
               variant="body1"
-              sx={{ marginBottom: "2rem" }}
-              maxWidth={{ sm: "50vw" }}
+              sx={{ marginBottom: "2rem", maxWidth: { sm: "50vw" } }}
             >
               Individuelle Physiotherapie für Menschen, die wieder besser,
               sicherer und freier in Bewegung kommen wollen.
@@ -62,15 +64,15 @@ const Hero = () => {
               useFlexGap
               flexWrap="wrap"
             >
-              {highlights.map((item) => (
+              {highlights.map((highlight) => (
                 <Stack
-                  key={item}
+                  key={highlight}
                   direction="row"
                   spacing={1}
                   alignItems="center"
                 >
                   <CheckIcon color="primary" fontSize="small" />
-                  <Typography>{item}</Typography>
+                  <Typography>{highlight}</Typography>
                 </Stack>
               ))}
             </Stack>

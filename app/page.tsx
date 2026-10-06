@@ -5,6 +5,9 @@ import Hero from "@/components/Hero";
 import Why from "@/components/Why";
 import Leistungen from "@/components/Leistungen";
 import Praxis from "@/components/Praxis";
+import Ablauf from "@/components/Ablauf";
+import CTA from "@/components/CTA";
+import Footer from "@/components/Footer";
 
 const Home = () => {
   return (
@@ -23,6 +26,9 @@ const Home = () => {
       <Why></Why>
       <Leistungen></Leistungen>
       <Praxis></Praxis>
+      <Ablauf></Ablauf>
+      <CTA></CTA>
+      <Footer></Footer>
     </Box>
   );
 };

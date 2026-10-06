@@ -25,6 +25,7 @@ const leistungen = [
 const Leistungen = () => {
   return (
     <Box
+      id="leistungen"
       component="section"
       sx={{
         py: { xs: 4, md: 8 },
@@ -32,7 +33,10 @@ const Leistungen = () => {
       }}
     >
       <Container>
-        <Typography variant="body2" sx={{ color: "primary.main" }}>
+        <Typography
+          variant="body2"
+          sx={{ color: "primary.main", textTransform: "uppercase" }}
+        >
           Leistungen
         </Typography>
         <Typography variant="h2" sx={{ margin: "1rem 0" }}>
