@@ -18,7 +18,11 @@ const CTA = () => {
         <Box
           sx={{ bgcolor: "secondary.main", padding: 2.5, borderRadius: 1.5 }}
         >
-          <Stack direction={{ sx: "column", md: "row" }} spacing={3}>
+          <Stack
+            direction={{ xs: "column", md: "row" }}
+            spacing={3}
+            sx={{ justifyContent: "space-between", alignItems: "flex-start" }}
+          >
             <Box sx={{ flex: 1 }}>
               <Typography
                 variant="body2"
@@ -38,17 +42,24 @@ const CTA = () => {
               </Typography>
 
               <Typography
-                variant={{ xs: "body1", md: "h2" }}
+                variant="h2"
                 sx={{
                   color: "secondary.contrastText",
-                  fontWeight: 600,
+                  fontSize: { xs: "1.5rem", md: "2.5rem" },
                   marginTop: 2,
                 }}
               >
                 Dein Körper, unsere Baustelle.
               </Typography>
+              <Typography
+                variant="body2"
+                sx={{ display: { xs: "none", md: "flex" } }}
+              >
+                Erzähl uns kurz, wo es gerade hakt. Wir melden uns mit dem
+                passenden nächsten Schritt
+              </Typography>
             </Box>
-            <Box sx={{ flex: 1 }}>
+            <Box sx={{ flex: 1, alignSelf: { md: "center" } }}>
               <Button
                 variant="contained"
                 sx={{
