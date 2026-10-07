@@ -10,7 +10,7 @@ type Props = {
 
 const SectionHeader = ({ section, title, text }: Props) => {
   return (
-    <Stack spacing={2}>
+    <Stack spacing={3}>
       <Typography
         variant="body2"
         sx={{ color: "primary.main", textTransform: "uppercase" }}
@@ -18,7 +18,11 @@ const SectionHeader = ({ section, title, text }: Props) => {
         {section}
       </Typography>
       <Typography variant="h2">{title}</Typography>
-      {text && <Typography variant="body2">{text}</Typography>}
+      {text && (
+        <Typography variant="body2" sx={{ marginBottom: "2rem" }}>
+          {text}
+        </Typography>
+      )}
     </Stack>
   );
 };

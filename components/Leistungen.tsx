@@ -1,9 +1,9 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import VisualBox2 from "./VisualBox2";
+import Section from "./Section";
+import SectionHeader from "./SectionHeader";
+import Box from "@mui/material/Box";
 
 import { getAccent } from "@/src/constants/accents";
 
@@ -24,42 +24,30 @@ const leistungen = [
 
 const Leistungen = () => {
   return (
-    <Box
-      id="leistungen"
-      component="section"
-      sx={{
-        py: { xs: 4, md: 8 },
-        bgcolor: "background.paper",
-      }}
-    >
-      <Container>
-        <Typography
-          variant="body2"
-          sx={{ color: "primary.main", textTransform: "uppercase" }}
-        >
-          Leistungen
-        </Typography>
-        <Typography variant="h2" sx={{ margin: "1rem 0" }}>
-          Was können wir für dich tun?
-        </Typography>
-        <Typography variant="body2">
-          Klare Angebote. Individuelle Kombinationen.
-        </Typography>
-        <Stack
-          direction={{ xs: "column", md: "row" }}
-          spacing={3}
-          sx={{ p: 3, flex: 1 }}
-        >
-          {leistungen.map((leistung, index) => (
-            <VisualBox2
-              key={leistung.title}
-              {...leistung}
-              color={getAccent(index)}
-            ></VisualBox2>
-          ))}
-        </Stack>
-      </Container>
-    </Box>
+    <Section id="leistungen" bgcolor="background.paper">
+      <SectionHeader
+        section="Leistungen"
+        title="Was können wir für dich tun?"
+        text="Klare Angebote. Individuelle Kombinationen."
+      ></SectionHeader>
+
+      <Box
+        sx={{
+          display: "grid",
+          gap: 3,
+          gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
+          padding: 3,
+        }}
+      >
+        {leistungen.map((leistung, index) => (
+          <VisualBox2
+            key={leistung.title}
+            {...leistung}
+            color={getAccent(index)}
+          ></VisualBox2>
+        ))}
+      </Box>
+    </Section>
   );
 };
 

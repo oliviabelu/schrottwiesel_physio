@@ -4,6 +4,8 @@ import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { getDuoColor } from "@/src/constants/accents";
+import Section from "./Section";
+import SectionHeader from "./SectionHeader";
 
 const steps = [
   {

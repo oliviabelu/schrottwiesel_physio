@@ -19,9 +19,11 @@ const VisualBox2 = ({ title, text, color }: Props) => {
         borderColor: "divider",
         borderRadius: 1,
         maxWidth: "350px",
+        height: "100%",
+        bgcolor: "background.default",
       }}
     >
-      <Stack direction="column" spacing={1.5}>
+      <Stack direction="column" spacing={1.5} sx={{ height: "100%" }}>
         <Box
           sx={{
             bgcolor: `${color}.main`,
@@ -33,13 +35,19 @@ const VisualBox2 = ({ title, text, color }: Props) => {
           {title}
         </Box>
 
-        <Typography variant="body2" padding={1}>
+        <Typography
+          variant="body2"
+          sx={{
+            padding: 1,
+            flexGrow: 1,
+          }}
+        >
           {text}
         </Typography>
         <Stack
           direction="row"
           alignItems="center"
-          spacing={2}
+          spacing={1}
           sx={{ padding: 1 }}
         >
           <Typography
@@ -47,7 +55,6 @@ const VisualBox2 = ({ title, text, color }: Props) => {
               fontWeight: 600,
               textTransform: "uppercase",
               fontSize: "small",
-              alignSelf: "flex-end",
             }}
           >
             Mehr erfahren
