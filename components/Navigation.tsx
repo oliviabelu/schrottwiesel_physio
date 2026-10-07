@@ -41,7 +41,8 @@ const Navigation = () => {
         <Stack
           component="nav"
           direction="row"
-          sx={{ display: { xs: "none", md: "flex" }, spacing: 4 }}
+          spacing={4}
+          sx={{ display: { xs: "none", md: "flex" } }}
         >
           {navItems.map((item) => (
             <MuiLink key={item.href} component={NextLink} href={item.href}>
