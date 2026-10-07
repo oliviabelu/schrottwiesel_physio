@@ -16,7 +16,12 @@ const CTA = () => {
     >
       <Container>
         <Box
-          sx={{ bgcolor: "secondary.main", padding: 2.5, borderRadius: 1.5 }}
+          sx={{
+            bgcolor: "secondary.main",
+            padding: 2.5,
+            borderRadius: 1.5,
+            maxWidth: "900px",
+          }}
         >
           <Stack
             direction={{ xs: "column", md: "row" }}
@@ -53,13 +58,20 @@ const CTA = () => {
               </Typography>
               <Typography
                 variant="body2"
-                sx={{ display: { xs: "none", md: "flex" } }}
+                sx={{ display: { xs: "none", md: "block" }, marginTop: "1rem" }}
               >
                 Erzähl uns kurz, wo es gerade hakt. Wir melden uns mit dem
-                passenden nächsten Schritt
+                passenden nächsten Schritt.
               </Typography>
             </Box>
-            <Box sx={{ flex: 1, alignSelf: { md: "center" } }}>
+            <Box
+              sx={{
+                flex: 1,
+                alignSelf: { md: "center" },
+                display: "flex",
+                justifyContent: { xs: "flex-start", md: "flex-end" },
+              }}
+            >
               <Button
                 variant="contained"
                 sx={{
