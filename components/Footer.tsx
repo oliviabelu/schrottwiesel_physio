@@ -7,7 +7,7 @@ import Divider from "@mui/material/Divider";
 
 const Footer = () => {
   return (
-    <Box sx={{ padding: 3 }}>
+    <Box id="kontakt" sx={{ padding: 3 }}>
       <Container>
         <Typography variant="h2" sx={{ textTransform: "uppercase" }}>
           Schrottwiesel
@@ -19,7 +19,7 @@ const Footer = () => {
           Physiotherapie
         </Typography>
         <Typography>Werkstattstr. 123</Typography>
-        <Typography>12345 Wertstadt</Typography>
+        <Typography>12345 Werkstadt</Typography>
         <Typography>Telefon: 0381 007 007</Typography>
         <Typography>E-Mail: schrottwiesel@physio.de</Typography>
         <Divider />

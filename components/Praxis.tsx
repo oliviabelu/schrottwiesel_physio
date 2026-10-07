@@ -21,7 +21,7 @@ const strenghts = [
 
 const Praxis = () => {
   return (
-    <Section>
+    <Section id="praxis">
       <Box
         sx={{
           display: "grid",
