@@ -14,7 +14,7 @@ const Footer = () => {
       <Container>
         <Stack
           direction={{ xs: "column", md: "row" }}
-          spacing={{ xs: 2, md: 5 }}
+          spacing={{ xs: 3, md: 5 }}
         >
           <Box>
             <Typography variant="h2" sx={{ textTransform: "uppercase" }}>
@@ -118,7 +118,10 @@ const Footer = () => {
               component={NextLink}
               href="#"
               variant="body2"
-              color="text.secondary"
+              sx={{
+                color: "text.secondary",
+                fontSize: { xs: 11, md: "0.95rem" },
+              }}
             >
               Impressum
             </MuiLink>
@@ -126,7 +129,10 @@ const Footer = () => {
               component={NextLink}
               href="#"
               variant="body2"
-              color="text.secondary"
+              sx={{
+                color: "text.secondary",
+                fontSize: { xs: 11, md: "0.95rem" },
+              }}
             >
               Datenschutz
             </MuiLink>
@@ -134,7 +140,10 @@ const Footer = () => {
               component={NextLink}
               href="#"
               variant="body2"
-              color="text.secondary"
+              sx={{
+                color: "text.secondary",
+                fontSize: { xs: 11, md: "0.95rem" },
+              }}
             >
               Cookie-Einstellungen
             </MuiLink>
