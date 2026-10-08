@@ -14,14 +14,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
-
-const navItems = [
-  { label: "Leistungen", href: "#leistungen" },
-  { label: "Praxis", href: "#praxis" },
-  // { label: "Team", href: "#team" },
-  { label: "Ablauf", href: "#ablauf" },
-  { label: "Kontakt", href: "#kontakt" },
-];
+import { navItems } from "@/src/constants/structure";
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
