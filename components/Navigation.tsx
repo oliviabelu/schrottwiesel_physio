@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Container from "@mui/material/Container";
 import Image from "next/image";
 import Button from "@mui/material/Button";
 import NextLink from "next/link";
@@ -24,55 +25,59 @@ const Navigation = () => {
       color="inherit"
       sx={{ bgcolor: "Background.default", color: "text.primary" }}
     >
-      <Toolbar sx={{ justifyContent: "space-between" }}>
-        <Image
-          src="/Schrottwiesel_Physiotherapie_Logo.png"
-          alt="Logo"
-          width={86}
-          height={64}
-        />
-        <Stack
-          component="nav"
-          direction="row"
-          spacing={4}
-          sx={{ display: { xs: "none", md: "flex" } }}
-        >
-          {navItems.map((item) => (
-            <MuiLink key={item.href} component={NextLink} href={item.href}>
-              {item.label}
-            </MuiLink>
-          ))}
-        </Stack>
+      <Container>
+        <Toolbar sx={{ justifyContent: "space-between" }}>
+          <MuiLink component={NextLink} href="/">
+            <Image
+              src="/Schrottwiesel_Physiotherapie_Logo.png"
+              alt="Logo"
+              width={86}
+              height={64}
+            />
+          </MuiLink>
+          <Stack
+            component="nav"
+            direction="row"
+            spacing={4}
+            sx={{ display: { xs: "none", md: "flex" } }}
+          >
+            {navItems.map((item) => (
+              <MuiLink key={item.href} component={NextLink} href={item.href}>
+                {item.label}
+              </MuiLink>
+            ))}
+          </Stack>
 
-        <Button
-          variant="contained"
-          sx={{ display: { xs: "none", md: "inline-flex" } }}
-        >
-          Termin vereinbaren
-        </Button>
-        <IconButton
-          aria-label="Menü öffnen"
-          onClick={() => setOpen(true)}
-          sx={{ display: { xs: "inline-flex", md: "none" } }}
-        >
-          <MenuIcon />
-        </IconButton>
-      </Toolbar>
+          <Button
+            variant="contained"
+            sx={{ display: { xs: "none", md: "inline-flex" } }}
+          >
+            Termin vereinbaren
+          </Button>
+          <IconButton
+            aria-label="Menü öffnen"
+            onClick={() => setOpen(true)}
+            sx={{ display: { xs: "inline-flex", md: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+        </Toolbar>
 
-      <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
-        <List>
-          {navItems.map((item) => (
-            <ListItemButton
-              key={item.href}
-              component={NextLink}
-              href={item.href}
-              onClick={() => setOpen(false)}
-            >
-              <ListItemText primary={item.label} />
-            </ListItemButton>
-          ))}
-        </List>
-      </Drawer>
+        <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
+          <List>
+            {navItems.map((item) => (
+              <ListItemButton
+                key={item.href}
+                component={NextLink}
+                href={item.href}
+                onClick={() => setOpen(false)}
+              >
+                <ListItemText primary={item.label} />
+              </ListItemButton>
+            ))}
+          </List>
+        </Drawer>
+      </Container>
     </AppBar>
   );
 };

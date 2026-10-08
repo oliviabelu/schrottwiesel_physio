@@ -10,7 +10,7 @@ import { navItems } from "@/src/constants/structure";
 
 const Footer = () => {
   return (
-    <Box id="kontakt" sx={{ padding: 3 }}>
+    <Box id="kontakt" sx={{ padding: 3, bgcolor: "Background.paper" }}>
       <Container>
         <Stack
           direction={{ xs: "column", md: "row" }}

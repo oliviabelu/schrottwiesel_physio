@@ -20,7 +20,7 @@ const Hero = () => {
       }}
     >
       <Container>
-        <Stack direction={{ xs: "column", md: "row" }}>
+        <Stack direction={{ xs: "column", md: "row" }} spacing={2}>
           <Box sx={{ flex: 1 }}>
             <Typography
               variant="body2"

@@ -7,6 +7,8 @@ import theme from "@/styles/theme";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
+import BackToTopButton from "@/components/BackToTopButton";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -28,6 +30,7 @@ export default function RootLayout({
             <Navigation />
             <main>{children}</main>
             <Footer />
+            <BackToTopButton />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

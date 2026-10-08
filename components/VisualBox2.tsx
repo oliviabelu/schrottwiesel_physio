@@ -4,6 +4,8 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import type { AccentColor } from "@/src/constants/accents";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import NextLink from "next/link";
+import MuiLink from "@mui/material/Link";
 
 type Props = {
   title: string;
@@ -44,23 +46,34 @@ const VisualBox2 = ({ title, text, color }: Props) => {
         >
           {text}
         </Typography>
-        <Stack
-          direction="row"
-          alignItems="center"
-          spacing={1}
-          sx={{ padding: 1 }}
+
+        <MuiLink
+          component={NextLink}
+          href="/leistungen"
+          sx={{
+            "&:hover": {
+              fontWeight: 600,
+            },
+          }}
         >
-          <Typography
+          {/* <Typography
             sx={{
               fontWeight: 600,
               textTransform: "uppercase",
               fontSize: "small",
             }}
+          > */}{" "}
+          <Stack
+            direction="row"
+            alignItems="center"
+            spacing={1}
+            sx={{ padding: 1 }}
           >
             Mehr erfahren
-          </Typography>
-          <ArrowRightAltIcon color="primary" />
-        </Stack>
+            {/* </Typography> */}
+            <ArrowRightAltIcon color="primary" />
+          </Stack>
+        </MuiLink>
       </Stack>
     </Box>
   );

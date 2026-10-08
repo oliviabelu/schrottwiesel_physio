@@ -6,7 +6,6 @@ import Leistungen from "@/components/Leistungen";
 import Praxis from "@/components/Praxis";
 import Ablauf from "@/components/Ablauf";
 import CTA from "@/components/CTA";
-import BackToTopButton from "@/components/BackToTopButton";
 
 const Home = () => {
   return (
@@ -17,7 +16,6 @@ const Home = () => {
       <Praxis />
       <Ablauf />
       <CTA />
-      <BackToTopButton />
     </>
   );
 };
